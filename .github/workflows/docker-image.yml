@@ -24,10 +24,10 @@ jobs:
       packages: write
 
     steps:
-    - name: define commit hash
-      run: echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
     - name: checkout repo
       uses: actions/checkout@v2
+    - name: define commit hash
+      run: echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
     - name: Log in to GHCR
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
       with:
